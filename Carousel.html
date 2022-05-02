@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choisir un formulaire</title>
+    <script src="Carousel.js" type="text/javascript"></script>
+</head>
+<link href='style.css' type='text/css' rel='stylesheet'/>
+<body onload="loadpage()">
+<div class="header">
+    <div class="titre">
+        <h1 style="white-space: nowrap">EHPAD PAX DINAN</h1>
+    </div><br>
+
+    <div class="bar">
+        <ul>
+            <li><a href="#instruction">Instructions</a></li>
+            <li><a href="#supprimer">Supprimer fichiers</a></li>
+            <li><a href="#menu">Réalisation</a></li>
+        </ul>
+
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="sante">
+        <div class="txt">
+
+        </div>
+        <div class="graph">
+            <h2>Données de santé</h2>
+            <div class="graph2">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="carou">
+        <input type="radio" name="slider" id="item-1" checked>
+        <input type="radio" name="slider" id="item-2">
+        <input type="radio" name="slider" id="item-3">
+        <div class="cards">
+            <h2 style="white-space: nowrap">Double cliquer sur le formulaire</h2>
+            <br>
+            <label class="card" for="item-1" id="song-1">
+                <img alt="Menus" src="image/MENU.jpg" id="img">
+            </label>
+            <label class="card" for="item-2" id="song-2">
+                <img alt="activite" src="image/activite.jpg" id="img1">
+            </label>
+            <label class="card" for="item-3" id="song-3">
+                <img alt="rdv" src="image/RDV.PNG" id="img2">
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="popover" id="menu">
+    <div class='content'>
+        <a href="#" class="close"></a>
+        <div class='nav'>
+
+            <div class="tete">
+                <div class="nav_list_item">
+                    <img alt="logoMaupert" src="image/maupertuis.png" id="img3">
+                </div>
+            </div>
+            <div class="pied">
+                <div class='nav_list_item'>
+                    <h1>Assistance vocal en EHPAD</h1>
+                </div>
+                <div class='nav_list_item'>
+                    <h2>Réalisé par :</h2><br>
+
+                    <h3>Léo Châles</h3>
+
+                    <h3>Simon Deloche</h3>
+
+                    <h3>Benjamin Choley</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="popover" id="instruction">
+    <div class='content'>
+        <a href="#" class="close"></a>
+        <div class='nav'>
+            <div class="pied">
+                <div class='nav_list_item'>
+                    <h1>Instructions d'utilisation</h1>
+                </div>
+                <div class='nav_list_item'>
+                    <h2>Pour le menu : </h2>
+                    <p> Veuillez remplir le formulaire <span class="bleu">semaine par semaine</span>.<br><br>
+                        Un indice en bas de la page s'incrémentera à chaque envoi du formulaire
+                        afin que vous puissiez savoir à quel jour vous en êtes.
+                    </p>
+                    <p>
+                        Veillez aussi à supprimer le fichier Menus.JSON avant de
+                        remplir le formulaire pour la semaine.<br><br>
+                        Pour ce faire rendez-vous dans l'onglet <span class="rouge">Supprimer fichiers</span>
+                    </p><br>
+                    <h2>Pour les activités : </h2>
+                    <p> Veillez à supprimer le fichier Activite.JSON avant de
+                        remplir le formulaire pour les activités.<br><br>
+                        Pour ce faire rendez-vous dans l'onglet <span class="rouge">Supprimer fichiers</span>
+                    </p><br>
+                    <h2>Pour les rendez-vous : </h2>
+                    <p>
+                        Veillez à supprimer le fichier RDV.JSON avant de
+                        remplir le formulaire pour les rendez-vous.<br><br>
+                        Pour ce faire rendez-vous dans l'onglet <span class="rouge">Supprimer fichiers</span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="popover" id="supprimer">
+    <div class='content'>
+        <a href="#" class="close"></a>
+        <div class='nav'>
+            <div class='nav_list_item'>
+                <h1>Supprimer les fichiers .JSON</h1><br><br>
+                <p>Pour supprimer un ou plusieurs fichiers, veuillez cocher la ou les
+                    cases correspondant aux fichiers à supprimer.</p>
+            </div>
+            <div class='nav_list_item'>
+                <form action="Supprimer_fichier_json.php" method="post">
+
+                    Menus : <input type="checkbox" name="menus"><br><br>
+                    Rendez-vous : <input type="checkbox" name="RDV"><br><br>
+                    Activités : <input type="checkbox" name="activite"><br><br>
+
+                    <input type="submit" name="submit" value="Valider">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

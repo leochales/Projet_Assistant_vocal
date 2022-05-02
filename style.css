@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+
+    justify-content: center;
+    transition: background .4s ease-in;
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.graph h2 {
+    position: relative;
+    text-align: center;
+    top: 10px;
+}
+
+.cards h2 {
+    position: relative;
+    text-align: center;
+    top: 10px;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex: 80%;
+}
+
+.card {
+    position: absolute;
+    width: 60%;
+    height: 85%;
+    left: 0;
+    right: 0;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    transition: transform .4s ease;
+    cursor: pointer;
+
+    border: 2px solid dimgrey;
+    border-radius: 5px;
+}
+
+.header {
+    width: 100%;
+    height: 100%;
+    flex: 20%;
+    justify-content: space-between;
+}
+
+.cards {
+    position: relative;
+    width: 85%;
+    height: 95%;
+    box-shadow: 0px 0px 20px grey;
+    margin-left: 50px;
+    border-radius: 10px;
+
+}
+
+.carou {
+    flex: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.sante {
+    width: 100%;
+    height: 100%;
+    flex: 50%;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.txt {
+    width: 100%;
+    height: 30%;
+    flex: 20%;
+    box-shadow: 0px 0px 20px grey;
+    border-radius: 10px;
+}
+
+.graph {
+    width: 100%;
+    height: 63%;
+    flex: 80%;
+    box-shadow: 0px 0px 20px grey;
+    border-radius: 10px;
+
+}
+.graph2{
+    width: 92%;
+    height: 80%;
+    box-shadow: 0px 0px 20px grey;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+#img3 {
+    width: 300px;
+    height: 80px;
+    margin-right: 950px;
+}
+#img, #img1, #img2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+
+}
+
+#item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #song-2 {
+    transform: translatex(-40%) scale(.8);
+    opacity: .5;
+    z-index: 0;
+}
+
+#item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
+    transform: translatex(40%) scale(.8);
+    opacity: .5;
+    z-index: 0;
+}
+
+#item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
+    transform: translatex(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+    width: 70%;
+}
+
+
+.bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    width: 100%;
+    height: 25%;
+    box-shadow: 0px 0px 20px grey;
+}
+
+.bar li {
+    float: left;
+    border-right: 2px solid #bbb;
+
+
+}
+
+.bar li un {
+    display: block;
+    background-color: #dddddd;
+}
+
+.bar li a {
+
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 17px;
+    text-decoration: none;
+}
+
+.bar a:hover {
+    color: green;
+}
+
+
+.popover {
+    display: none;
+    box-shadow: 0px 6px 8px rgba(19, 19, 19, .7);
+    background-color: white;
+}
+
+.popover:target {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popover .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 0;
+    height: 0;
+    color: black;
+    background-color: white ;
+    animation: 1s grow ease forwards;
+    text-align: center;
+}
+
+.nav_list_item {
+    padding: 15px 0;
+    text-transform: uppercase;
+    transform: translateY(200px);
+    opacity: 0;
+    animation: 2s slideUp ease forwards .5s;
+    position: relative;
+}
+
+.popover .close::after {
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    content: "×";
+    cursor: pointer;
+    opacity: 0;
+    animation: 1s fadeIn ease forwards .5s;
+}
+
+.nav {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes grow {
+    100% {
+        height: 90%;
+        width: 90%;
+    }
+}
+
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.rouge{
+    color: red;
+}
+.bleu{
+    color: dodgerblue;
+}
